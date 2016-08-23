@@ -1,0 +1,28 @@
+1. 加载ui.bootstrap
+2. html界面
+  <uib-accordion close-others="oneAtATime">
+    <div uib-accordion-group class="panel-default" is-open="status.isCustomHeaderOpen">
+        <uib-accordion-heading>
+            Custom template with custom header template
+            <i class="pull-right glyphicon"
+               ng-class="{'glyphicon-chevron-down': status.isCustomHeaderOpen, 'glyphicon-chevron-right': !status.isCustomHeaderOpen}"></i>
+        </uib-accordion-heading>
+        World
+    </div>
+    <div uib-accordion-group class="panel-default" is-open="status.open">
+        <uib-accordion-heading>
+            I can have markup, too!
+            <i class="pull-right glyphicon"
+               ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        </uib-accordion-heading>
+        This is just some content to illustrate fancy headings.
+    </div>
+</uib-accordion>
+3. js界面 控制图标按钮效果
+    // 展开收缩配置
+    $scope.oneAtATime = true;
+    $scope.status = {
+        isCustomHeaderOpen: false,
+        isFirstOpen: true,
+        isFirstDisabled: false
+    };
